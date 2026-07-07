@@ -228,11 +228,17 @@ Recording controls (Isaac window focus): **B** start, **L** L-motion, **N** save
 
 The dashboard recorder runs inside the Isaac container at `/workspace/cyclo_lab`. Ensure that path mounts your synced `cyclo_lab` checkout (host edits must be visible there).
 
+Connect the headset over USB-C (recommended) — see [adb_vr_connect/README.md](adb_vr_connect/README.md) for wired ADB reverse tethering setup. This avoids the latency jitter WiFi introduces, which shows up as stutter during teleoperation. Open this address in the headset browser:
+
+```text
+https://localhost:8012?ws=wss://localhost:8012
+```
+
+WiFi is also supported if a wired connection isn't available. In that case, use the address the dashboard prints instead:
+
 ```text
 https://<host-ip>:8012
 ```
-
-The headset page is printed by the dashboard. It normally looks like the URL above.
 
 For hand tasks, VR publishing starts disabled by default. Enable it with the SH5 gesture or publish the override:
 
